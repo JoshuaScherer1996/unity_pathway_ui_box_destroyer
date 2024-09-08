@@ -3,4 +3,5 @@
 This repository contains the fifth project from the Unity Pathway "Junior Programmer". The goal is to understand and implement the concept of user interface.
 
 ## Topics covered
-* tbd
+* Torque for rotation
+* 
