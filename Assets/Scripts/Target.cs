@@ -6,12 +6,14 @@ public class Target : MonoBehaviour
     // Initializing and declaring the constants and variables.
     private Rigidbody _targetRb;
     private GameManager _gameManager;
-    public int pointValue;
     private const float MinSpeed = 12.0f;
     private const float MaxSpeed = 16.0f;
     private const float MaxTorque = 10.0f;
     private const float XRange = 4.0f;
     private const float YSpawnPos = 2.0f;
+    
+    public int pointValue;
+    public ParticleSystem explosionParticles;
 
     // Start is called before the first frame update
     private void Start()
@@ -37,6 +39,7 @@ public class Target : MonoBehaviour
     {
         Destroy(gameObject);
         _gameManager.UpdatedScore(pointValue);
+        Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
     }
 
     // Destroys the target when ist collides with another object that has a trigger.
