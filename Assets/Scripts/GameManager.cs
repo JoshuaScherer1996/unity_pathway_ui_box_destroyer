@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget());
     }
 
+    // Coroutine that handles the spawn logic.
     private IEnumerator SpawnTarget()
     {
+        // Pauses the spawn process and chooses a random object from out list to instantiate.
         while (true)
         {
             yield return new WaitForSeconds(SpawnRate);

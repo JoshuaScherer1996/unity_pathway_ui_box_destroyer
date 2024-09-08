@@ -9,4 +9,6 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * Game Manager scripts
 * Lists
 * While loop 
+* OnMouseUp method
+* OnMouseDown method
 * 

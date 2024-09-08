@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class Target : MonoBehaviour
     private const float MaxSpeed = 16.0f;
     private const float MaxTorque = 10.0f;
     private const float XRange = 4.0f;
-    private const float YSpawnPos = 6.0f;
+    private const float YSpawnPos = 2.0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,6 +26,18 @@ public class Target : MonoBehaviour
 
         // Sets the starting position.
         _targetRb.position = RandomPos();
+    }
+
+    // Destroys the game object when the mouse is on it and the left mouse button gets pressed.
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    // Destroys the target when ist collides with another object that has a trigger.
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 
     // Function randomizes the upwards directed force.
