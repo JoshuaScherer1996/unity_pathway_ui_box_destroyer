@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> targets;
     private const float SpawnRate = 1.0f;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
     private int _score;
     
     
@@ -36,5 +37,11 @@ public class GameManager : MonoBehaviour
     {
         _score += scoreToAdd;
         scoreText.text = "Score: " + _score;
+    }
+
+    // Function enables the game over text.
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
     }
 }

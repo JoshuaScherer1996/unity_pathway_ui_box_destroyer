@@ -42,10 +42,14 @@ public class Target : MonoBehaviour
         Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
     }
 
-    // Destroys the target when ist collides with another object that has a trigger.
+    // Destroys the target when ist collides with another object that has a trigger. Also activates game over.
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if (!gameObject.CompareTag("Bad"))
+        {
+            _gameManager.GameOver();
+        }
     }
 
     // Function randomizes the upwards directed force.

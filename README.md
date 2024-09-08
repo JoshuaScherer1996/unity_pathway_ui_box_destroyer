@@ -13,4 +13,9 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * OnMouseDown method
 * Canvas
 * TextMeshPro
+* Buttons
+* RestartGame method
+* Events
+* Event listeners
+* Text mesh pro properes
 * 
