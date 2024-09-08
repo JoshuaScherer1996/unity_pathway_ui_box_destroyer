@@ -11,4 +11,6 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * While loop 
 * OnMouseUp method
 * OnMouseDown method
+* Canvas
+* TextMeshPro
 * 

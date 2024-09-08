@@ -3,8 +3,10 @@ using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
-    // Initializing and declaring the constants and variable.
+    // Initializing and declaring the constants and variables.
     private Rigidbody _targetRb;
+    private GameManager _gameManager;
+    public int pointValue;
     private const float MinSpeed = 12.0f;
     private const float MaxSpeed = 16.0f;
     private const float MaxTorque = 10.0f;
@@ -16,6 +18,9 @@ public class Target : MonoBehaviour
     {
         // Gets the rigid body component.
         _targetRb = GetComponent<Rigidbody>();
+        
+        // Gains access to the GameManager script.
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         // Applies our random upwards force.
         _targetRb.AddForce(RandomForce(), ForceMode.Impulse);
@@ -27,10 +32,11 @@ public class Target : MonoBehaviour
         _targetRb.position = RandomPos();
     }
 
-    // Destroys the game object when the mouse is on it and the left mouse button gets pressed.
+    // Destroys the game object when the mouse is on it and the left mouse button gets pressed. Also increases the score.
     private void OnMouseDown()
     {
         Destroy(gameObject);
+        _gameManager.UpdatedScore(pointValue);
     }
 
     // Destroys the target when ist collides with another object that has a trigger.
