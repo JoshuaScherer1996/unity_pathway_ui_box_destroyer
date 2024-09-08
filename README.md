@@ -6,4 +6,7 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * Torque for rotation
 * Return values
 * Static
+* Game Manager scripts
+* Lists
+* While loop 
 * 
