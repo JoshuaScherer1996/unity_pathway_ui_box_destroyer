@@ -37,9 +37,12 @@ public class Target : MonoBehaviour
     // Destroys the game object when the mouse is on it and the left mouse button gets pressed. Also increases the score.
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        _gameManager.UpdatedScore(pointValue);
-        Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
+        if (_gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            _gameManager.UpdatedScore(pointValue);
+            Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
+        }
     }
 
     // Destroys the target when ist collides with another object that has a trigger. Also activates game over.
