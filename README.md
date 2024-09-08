@@ -14,8 +14,12 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * Canvas
 * TextMeshPro
 * Buttons
-* RestartGame method
 * Events
 * Event listeners
-* Text mesh pro properes
+* Text mesh pro propteries
+* Text mesh pro button
+* SceneManagement library
+* GetActiveScene method
+* OnClick button property 
+* UI library
 * 
