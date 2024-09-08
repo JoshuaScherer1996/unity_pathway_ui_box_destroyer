@@ -4,4 +4,6 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 
 ## Topics covered
 * Torque for rotation
+* Return values
+* Static
 * 
