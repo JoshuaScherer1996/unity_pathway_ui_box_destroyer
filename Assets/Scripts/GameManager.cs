@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Initializing the variable.
+    // Initializing and declaring the variable and constant.
     public List<GameObject> targets;
     private const float SpawnRate = 1.0f;
     
@@ -24,6 +24,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(SpawnRate);
             var index = Random.Range(0, targets.Count);
             Instantiate(targets[index]);
-        }   
+        }
     }
 }

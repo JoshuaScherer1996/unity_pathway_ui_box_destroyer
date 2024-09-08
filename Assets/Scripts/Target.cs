@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,7 +21,7 @@ public class Target : MonoBehaviour
         _targetRb.AddForce(RandomForce(), ForceMode.Impulse);
 
         // Applies a random rotation.
-        _targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
+        _targetRb.AddTorque(RandomTorque(), ForceMode.Impulse);
 
         // Sets the starting position.
         _targetRb.position = RandomPos();
@@ -47,9 +46,13 @@ public class Target : MonoBehaviour
     }
 
     // Function randomizes the rotation values.
-    private static float RandomTorque()
+    private static Vector3 RandomTorque()
     {
-        return Random.Range(-MaxTorque, MaxTorque);
+        return new Vector3(
+            Random.Range(-MaxTorque, MaxTorque),
+            Random.Range(-MaxTorque, MaxTorque),
+            Random.Range(-MaxTorque, MaxTorque)
+            );
     }
 
     // Function randomizes the spawn position on the X and Y axis.
