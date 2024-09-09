@@ -22,4 +22,3 @@ This repository contains the fifth project from the Unity Pathway "Junior Progra
 * GetActiveScene method
 * OnClick button property 
 * UI library
-* 

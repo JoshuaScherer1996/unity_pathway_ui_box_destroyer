@@ -7,30 +7,33 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Initializing and declaring the variables and constant.
+    // Initializing and declaring the variables.
     public List<GameObject> targets;
-    private const float SpawnRate = 1.0f;
+    private float _spawnRate = 1.0f;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     private int _score;
     public bool isGameActive;
     public Button restartButton;
-    
-    // Start is called before the first frame update.
-    private void Start()
+    public GameObject titleScreen;
+
+    // Function stets all necessary states for the scene when the game starts.
+    public void StartGame(int difficulty)
     {
         isGameActive = true;
         UpdatedScore(0);
         StartCoroutine(SpawnTarget());
+        titleScreen.SetActive(false);
+        _spawnRate /= difficulty;
     }
-
+    
     // Coroutine that handles the spawn logic.
     private IEnumerator SpawnTarget()
     {
         // Pauses the spawn process and chooses a random object from out list to instantiate.
         while (isGameActive)
         {
-            yield return new WaitForSeconds(SpawnRate);
+            yield return new WaitForSeconds(_spawnRate);
             var index = Random.Range(0, targets.Count);
             Instantiate(targets[index]);
         }
